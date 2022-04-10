@@ -28,7 +28,7 @@ function Footer() {
           fontWeight="bold"
           color="#000000"
         >
-          Tosu
+          Tosu Stores
         </Text>
         <InputGroup>
           <Input bg="white" placeholder="Enter Email Address" />

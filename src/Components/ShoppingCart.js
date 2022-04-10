@@ -152,7 +152,7 @@ function ShoppingCart() {
             )}
           </Box>
           {!isEmpty && (
-            <Stack mt="20px" direction={["column", "row"]}>
+            <Stack mt="30px" direction={[ "row"]}>
               <Button
                 as={Link}
                 href="/products"

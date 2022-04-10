@@ -4,13 +4,47 @@ import Footer from "../Components/Footer";
 import Header from "../Components/Header";
 import HeaderLinks from "../Components/HeaderLinks";
 import { FaSmileWink } from "react-icons/fa";
+import PageTitleBar from "../Components/PageTitleBar";
+import HomeCarousels from "../Components/HomeCarousels";
+import Welcome from "../Components/Welcome";
+import Prod from "../Components/Prod";
+import LatestProducts from "../Components/LatestProducts";
+import Subscribe from "../Components/Subscribe";
 
 function Home() {
   return (
     <>
       <Header />
       <HeaderLinks active="home" />
-      <Heading mb="20px" color="red" textAlign="center">
+      <PageTitleBar pageTitle="Home" />
+      <Welcome />
+      <HomeCarousels />
+      <Text
+        textAlign="center"
+        my="30px"
+        fontWeight="bold"
+        fontSize="30px"
+        color="#1A0B5B"
+        fontFamily="Roboto"
+      >
+        Featured Products
+      </Text>
+      <Prod />
+      <Text
+        textAlign="center"
+        my="30px"
+        fontWeight="bold"
+        fontSize="30px"
+        color="#1A0B5B"
+        fontFamily="Roboto"
+      >
+        Latest Products
+      </Text>
+      <LatestProducts />
+
+      <Subscribe />
+
+      {/* <Heading mb="20px" color="red" textAlign="center">
         This Page is under Construction
       </Heading>
       <Link _hover={{textDecoration: "none"}} href="/products">
@@ -26,7 +60,7 @@ function Home() {
           w="100%"
           src="https://i0.wp.com/theconstructor.org/wp-content/uploads/2020/04/Preliminary-Works-in-Construction.jpg?fit=1280%2C720&ssl=1"
         />
-      </Box>
+      </Box> */}
 
       <Footer />
     </>

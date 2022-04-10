@@ -38,10 +38,10 @@ function HeaderLinks({ active = false }) {
         fontSize={"30px"}
         fontWeight="900"
       >
-        Tosu
+        Tosu Stores
       </Text>
       <Stack
-        pl={{ base: "0px", md: "10%" }}
+        pl={{ base: "0px", md: "8%" }}
         direction={{ base: "column", md: "row" }}
         spacing="25px"
       >
