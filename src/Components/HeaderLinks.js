@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Stack,
   Text,
@@ -10,8 +10,20 @@ import {
 } from "@chakra-ui/react";
 import { BiSearch } from "react-icons/bi";
 
-function HeaderLinks({active = false}) {
-//   const [active, setActive] = useState(false);
+function HeaderLinks({ active = false }) {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const checkUser = () => {
+    let user = JSON.parse(localStorage.getItem("user"));
+    if (user) {
+      setIsLoggedIn(true);
+    }
+  };
+
+  useEffect(() => {
+    checkUser();
+  }, []);
+
   return (
     <Stack
       w="100%"
@@ -37,36 +49,44 @@ function HeaderLinks({active = false}) {
           <Text
             _hover={{ color: "#FB2E86", textDecoration: "none" }}
             fontWeight={"500"}
-            color={active === "home"? "#FB2E86" : "#0D0E43"}
+            color={active === "home" ? "#FB2E86" : "#0D0E43"}
           >
             Home
           </Text>
         </Link>
 
-        <Link _hover={{ color: "#FB2E86", textDecoration: "none" }} href="/products">
+        <Link
+          _hover={{ color: "#FB2E86", textDecoration: "none" }}
+          href="/products"
+        >
           <Text
             _hover={{ color: "#FB2E86" }}
             fontWeight={"500"}
-            color={active === "products"? "#FB2E86" : "#0D0E43"}
+            color={active === "products" ? "#FB2E86" : "#0D0E43"}
           >
             Products
           </Text>
         </Link>
-
-        <Link _hover={{ color: "#FB2E86", textDecoration: "none" }} href="/contact">
-          <Text
-            _hover={{ color: "#FB2E86" }}
-            fontWeight={"500"}
-            color={active === "contact" ? "#FB2E86" : "#0D0E43"}
+        {isLoggedIn && (
+          <Link
+            _hover={{ color: "#FB2E86", textDecoration: "none" }}
+            href="/contact"
           >
-            Contact
-          </Text>
-        </Link>
+            <Text
+              _hover={{ color: "#FB2E86" }}
+              fontWeight={"500"}
+              color={active === "contact" ? "#FB2E86" : "#0D0E43"}
+            >
+              Contact
+            </Text>
+          </Link>
+        )}
+
         <Link _hover={{ color: "#FB2E86", textDecoration: "none" }} href="#">
           <Text
             _hover={{ color: "#FB2E86" }}
             fontWeight={"500"}
-            color={active === "blog"? "#FB2E86" : "#0D0E43"}
+            color={active === "blog" ? "#FB2E86" : "#0D0E43"}
           >
             Blog
           </Text>
@@ -75,14 +95,13 @@ function HeaderLinks({active = false}) {
       <Spacer />
       <InputGroup w="220px">
         <InputRightElement
-            bg="#FB2E86"
-            color="white"
-            cursor="pointer"
-            borderEndRadius="8px"
-            children={<BiSearch />}
-          />
+          bg="#FB2E86"
+          color="white"
+          cursor="pointer"
+          borderEndRadius="8px"
+          children={<BiSearch />}
+        />
         <Input type="text" />
-        
       </InputGroup>
     </Stack>
   );
