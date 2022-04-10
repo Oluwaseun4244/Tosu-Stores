@@ -156,7 +156,7 @@ function ShoppingCart() {
               <Button
                 as={Link}
                 href="/products"
-                _hover={{ bg: "green", textDecoration: "none" }}
+                _hover={{ bg: "green",color: "white", textDecoration: "none" }}
                 bg="#FB2E86"
                 color="white"
               >

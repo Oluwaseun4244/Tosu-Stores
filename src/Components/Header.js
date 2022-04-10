@@ -95,13 +95,13 @@ function Header() {
               <HStack>
                 <BiEnvelope size={"24px"} color="white" />
                 <Text color="white" fontSize={"18px"}>
-                  {userMail || "texample@gmail.com"}
+                  {userMail || "example@gmail.com"}
                 </Text>
               </HStack>
               <HStack ml={{ base: "0px", md: "60px" }}>
                 <BiPhoneCall size={"24px"} color="white" />
                 <Text color="white" fontSize={"18px"}>
-                  080300000842
+                  080300xxxxxxx
                 </Text>
               </HStack>
             </Stack>

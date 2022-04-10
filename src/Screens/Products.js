@@ -131,7 +131,7 @@ function Products() {
                   spacingX="20px"
                   columns={{ base: 1, md: 3 }}
                 >
-                  {products.map((item, i) => (
+                  {currentItems.map((item, i) => (
                     <Grid product={item} key={i} />
                   ))}
                 </SimpleGrid>
