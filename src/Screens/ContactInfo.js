@@ -23,7 +23,7 @@ function ContactInfo() {
   const navigate = useNavigate();
   let user = JSON.parse(localStorage.getItem("user"));
   const [contactUser, setContactUser] = useState(false);
-  const { items } = useCart();
+  const { items, isEmpty } = useCart();
 
   const [contact, setContact] = useState({
     user_id: `${user.id}`,
@@ -67,10 +67,10 @@ function ContactInfo() {
     };
 
     // fetch("http://localhost:8000/api/add_contact", requestOptions)
-      fetch(
-        "https://tola-ecommerce.herokuapp.com/api/add_contact",
-        requestOptions
-      )
+    fetch(
+      "https://tola-ecommerce.herokuapp.com/api/add_contact",
+      requestOptions
+    )
       .then((response) => response.json())
       .then((result) => {
         notify("Contact info has been saved", "success");
@@ -113,7 +113,7 @@ function ContactInfo() {
 
   const getContact = () => {
     // fetch(`http://localhost:8000/api/get_contact/${user.id}`)
-      fetch(`https://tola-ecommerce.herokuapp.com/api/get_contact/${user.id}`)
+    fetch(`https://tola-ecommerce.herokuapp.com/api/get_contact/${user.id}`)
       .then((response) => response.json())
       .then((user_contact) => {
         if (user_contact.length > 0) {
@@ -296,9 +296,12 @@ function ContactInfo() {
               <Divider />
             </Box>
           ))}
-          <Box mt="40px">
-            <CartTotalCard />
-          </Box>
+
+          {!isEmpty && (
+            <Box mt="40px">
+              <CartTotalCard />
+            </Box>
+          )}
         </Box>
       </Stack>
 
