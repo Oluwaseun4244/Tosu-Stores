@@ -14,8 +14,6 @@ import { FiHeart } from "react-icons/fi";
 const data = {
   imageURL:
     "https://www-konga-com-res.cloudinary.com/w_auto,f_auto,fl_lossy,dpr_auto,q_auto/media/catalog/product/D/V/144356_1543477776.jpg",
-  //   imageURL:
-  //     "https://images.unsplash.com/photo-1572635196237-14b3f281503f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=4600&q=80",
   name: "Wayfarer Classic",
   price: 4200.0,
   rating: 4.2,

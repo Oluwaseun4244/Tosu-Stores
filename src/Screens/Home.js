@@ -10,6 +10,7 @@ import Welcome from "../Components/Welcome";
 import Prod from "../Components/Prod";
 import LatestProducts from "../Components/LatestProducts";
 import Subscribe from "../Components/Subscribe";
+import RubberBand from "react-reveal/RubberBand";
 
 function Home() {
   return (
@@ -19,27 +20,31 @@ function Home() {
       <PageTitleBar pageTitle="Home" />
       <Welcome />
       <HomeCarousels />
-      <Text
-        textAlign="center"
-        my="30px"
-        fontWeight="bold"
-        fontSize="30px"
-        color="#1A0B5B"
-        fontFamily="Roboto"
-      >
-        Featured Products
-      </Text>
+      <RubberBand>
+        <Text
+          textAlign="center"
+          my="30px"
+          fontWeight="bold"
+          fontSize="30px"
+          color="#1A0B5B"
+          fontFamily="Roboto"
+        >
+          Featured Products
+        </Text>
+      </RubberBand>
       <Prod />
-      <Text
-        textAlign="center"
-        my="30px"
-        fontWeight="bold"
-        fontSize="30px"
-        color="#1A0B5B"
-        fontFamily="Roboto"
-      >
-        Latest Products
-      </Text>
+      <RubberBand>
+        <Text
+          textAlign="center"
+          my="30px"
+          fontWeight="bold"
+          fontSize="30px"
+          color="#1A0B5B"
+          fontFamily="Roboto"
+        >
+          Latest Products
+        </Text>
+      </RubberBand>
       <LatestProducts />
 
       <Subscribe />

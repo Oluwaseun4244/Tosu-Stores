@@ -10,6 +10,8 @@ import {
 import { BsStar, BsStarFill, BsStarHalf } from "react-icons/bs";
 import { FaCartPlus } from "react-icons/fa";
 import { FiHeart } from "react-icons/fi";
+import Jump from 'react-reveal/Jump';
+import Wobble from 'react-reveal/Wobble';
 
 const data = {
   imageURL:
@@ -56,7 +58,10 @@ function LatestProducts() {
       justifyContent="center"
       spacing={{base: "20px", md:"100px"}}
     >
+
       {[1, 2, 3].map((item, i) => (
+          <Jump>
+
         <Box
           w={{ base: "90%", md: "300px" }}
           height={"460px"}
@@ -104,7 +109,7 @@ function LatestProducts() {
                 fontSize="xl"
                 fontWeight={500}
                 //   color={useColorModeValue("gray.800", "white")}
-              >
+                >
                 <Box as="span">₦</Box>
                 {data.price.toFixed(2)}
               </Box>
@@ -113,12 +118,13 @@ function LatestProducts() {
                 size={"md"}
                 background={"#F5862E"}
                 border={"1px solid white"}
-              >
+                >
                 <FaCartPlus /> &nbsp; Add to Cart
               </Button>
             </Flex>
           </Box>
         </Box>
+        </Jump>
       ))}
     </Stack>
   );
