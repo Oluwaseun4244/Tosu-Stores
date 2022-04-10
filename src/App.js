@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import { ChakraProvider } from "@chakra-ui/react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import ShoppingCart from "./Components/ShoppingCart";
+import ContactInfo from "./Screens/ContactInfo";
+import Error from "./Screens/Error";
+import Login from "./Screens/Login";
+import OrderCompleted from "./Screens/OrderCompleted";
+import ProductDetails from "./Screens/ProductDetails";
+import Products from "./Screens/Products";
+import Register from "./Screens/Register";
+import "react-toastify/dist/ReactToastify.css";
+import { CartProvider } from "react-use-cart";
+import Home from "./Screens/Home";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <CartProvider>
+      <ChakraProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/products/:prod_id" element={<ProductDetails />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/cart" element={<ShoppingCart />} />
+            <Route path="/completed" element={<OrderCompleted />} />
+            <Route path="/error" element={<Error />} />
+            <Route path="/contact" element={<ContactInfo />} />
+          </Routes>
+        </BrowserRouter>
+      </ChakraProvider>
+    </CartProvider>
   );
 }
 

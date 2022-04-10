@@ -1,0 +1,90 @@
+[
+  {
+    "id": 1,
+    "name": "Men Polo",
+    "price": 4500,
+    "old_price": 8600,
+    "image": "https://dictionary.cambridge.org/images/thumb/Tshirt_noun_001_18267_2.jpg?version=5.0.230",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.",
+    "category": "Clothings",
+    "brand": "Polo",
+    "favorite": true
+  },
+  {
+    "id": 2,
+    "name": "Men Sneakers",
+    "price": 26000,
+    "old_price": 56000,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSK4hca8fbOjQyp-ZhH91z00TZkjHwEMa8fFg&usqp=CAU",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.",
+   "category": "Wears",
+   "brand": "Nike",
+   "favorite": false
+  },
+  {
+    "id": 3,
+    "name": "Phone Stand",
+    "price": 4500,
+    "old_price": 9800,
+    "image": "https://www.u-buy.com.ng/productimg/?image=aHR0cHM6Ly9tLm1lZGlhLWFtYXpvbi5jb20vaW1hZ2VzL0kvNjEtNHk1c0R5eFMuX0FDX1NMMTUwMF8uanBn.jpg",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.",
+    "category": "Gadgets",
+    "brand": "Opic",
+    "favorite": false
+  },
+  {
+    "id": 4,
+    "name": "Iphone X",
+    "price": 26000,
+    "old_price": 56000,
+    "image": "https://www-konga-com-res.cloudinary.com/w_auto,f_auto,fl_lossy,dpr_auto,q_auto/media/catalog/product/D/V/144356_1543477776.jpg",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.",
+    "category": "Mobile Phones",
+    "brand": "Apple",
+    "favorite": false
+  },
+  {
+    "id": 5,
+    "name": "Ear Pod",
+    "price": 26000,
+    "old_price": 56000,
+    "image": "https://static-uc.olist.ng/upload/20200609/xx5u5949p8h.jpg",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.",
+    "category": "Gadgets",
+    "brand": "Apple",
+    "favorite": false
+  },
+  {
+    "id": 6,
+    "name": "Power Bank",
+    "price": 26000,
+    "old_price": 56000,
+    "image": "https://slickmobile.com.ng/wp-content/uploads/2021/12/OPB-P271D_1.jpg",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.",
+    "category": "Gadgets",
+    "brand": "Oraimo",
+    "favorite": false
+  },
+  {
+    "id": 7,
+    "name": "Iphone X",
+    "price": 26000,
+    "old_price": 99000,
+    "image": "https://www-konga-com-res.cloudinary.com/w_auto,f_auto,fl_lossy,dpr_auto,q_auto/media/catalog/product/D/V/144356_1543477776.jpg",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.",
+    "category":"Mobile Phones",
+    "brand":"Apple",
+    "favorite": true
+  },
+  {
+    "id": 8,
+    "name": "Play Station 5",
+    "price": 467000,
+    "old_price": 578000,
+    "image": "https://www.ubuy.rw/productimg/?image=aHR0cHM6Ly9pNS53YWxtYXJ0aW1hZ2VzLmNvbS9hc3IvYmJhNWUwYjctNzJjYS00YWRhLWE3MmEtZWIwM2I1YWNhNjkyLmRiNDVjMzFlMTI3ZjYwMDVlZTMwYWU2NTk1YmIwYzg1LmpwZWc.jpg",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.",
+    "category":"Game Consoles",
+    "brand":"Sony",
+    "favorite": true
+  }
+]
