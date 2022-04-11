@@ -1,5 +1,8 @@
 [
     {
+        "brand": "All"
+    },
+    {
         "brand": "Polo"
     },
     {
@@ -25,5 +28,8 @@
     },
     {
         "brand": "Samsung"
+    },
+    {
+        "brand": "Others"
     }
 ]

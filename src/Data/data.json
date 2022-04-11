@@ -84,7 +84,7 @@
     "image": "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1629813918-P00582977.jpg?crop=1xw:1xh;center,top&resize=480:*",
     "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.",
     "category": "Wears",
-    "brand": "Sony",
+    "brand": "Nike",
     "favorite": true
   },
   {
@@ -172,7 +172,7 @@
     "image": "https://sojionet.com/wp-content/uploads/2021/01/full-ergonomic-chair.png",
     "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.",
     "category": "Others",
-    "brand": "Sony",
+    "brand": "Others",
     "favorite": false
   },
   {

@@ -1,20 +1,19 @@
 [
+  {
+    "category": "All"
+  },
+  {
+    "category": "Wears"
+  },
+  {
+    "category": "Gadgets"
+  },
+  {
+    "category": "Electronics"
+  },
+  
+  {
+    "category": "Others"
+  }
 
-    {
-        "category": "Wears"
-    },
-    {
-        "category": "Gadgets"
-    },
-    {
-        "category": "Mobile Phones"
-    }
-    ,
-    {
-        "category": "Game Consoles"
-    }
-    ,
-    {
-        "category": "Others"
-    }
 ]

@@ -30,7 +30,7 @@ function Products() {
   const [itemOffset, setItemOffset] = useState(0);
   const [productPerPage, setPerPage] = useState(4);
 
-//The function that handles product per page filter
+  //The function that handles product per page filter
   const perPage = (e) => {
     let value = e.target.value;
     value.length
@@ -115,7 +115,7 @@ function Products() {
           setProducts={setProducts}
           products={products}
         />
-        {products.length ? (
+        {currentItems.length ? (
           <>
             {" "}
             {list ? (
@@ -141,7 +141,7 @@ function Products() {
         ) : (
           <>
             <Box w={{ base: "100%", md: "80%" }}>
-              <Text textAlign="center" fontWeight="bold" fontSize="20px">
+              <Text color="#151875" textAlign="center" fontWeight="bold" fontSize="20px">
                 No Product Found
               </Text>
             </Box>
