@@ -24,7 +24,7 @@ function Subscribe() {
                 justifyContent="center"
                 mb="20px"
               >
-                Get Leatest Update By Subscribing To Our Newsletter
+                Get Latest Updates By Subscribing To Our Newsletter
               </Text>
             </Bounce>
             <Button
@@ -33,7 +33,7 @@ function Subscribe() {
               bg="#FB2E86"
               color="white"
             >
-              Shop Now
+              Subscribe Now
             </Button>
           </Stack>
         </Box>
