@@ -6,6 +6,7 @@ import {
   Checkbox,
   RadioGroup,
   Radio,
+  Stack
 } from "@chakra-ui/react";
 import brands from "../Data/brand.json";
 import categories from "../Data/categories.json";
@@ -51,7 +52,7 @@ function SideFilter({ products, setCurrentItems }) {
   };
 
   return (
-    <Box w={{ base: "100%", md: "20%" }}>
+    <Stack direction={["row", "column"]} spacing="30px" w={{ base: "100%", md: "20%" }}>
       <Box>
         <Text textDecoration="underline" fontWeight="bold" color="#151875">
           Product Brand
@@ -96,7 +97,7 @@ function SideFilter({ products, setCurrentItems }) {
           ))}
         </RadioGroup>
       </Box>
-      <Box mt="30px">
+      <Box display={{base: "none", md: "block"}} mt="30px">
         <Text textDecoration="underline" fontWeight="bold" color="#151875">
           Price Filter
         </Text>
@@ -108,7 +109,7 @@ function SideFilter({ products, setCurrentItems }) {
           </HStack>
         ))}
       </Box>
-    </Box>
+    </Stack>
   );
 }
 
