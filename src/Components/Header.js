@@ -1,7 +1,6 @@
 import {
   Box,
   HStack,
-  Link,
   Select,
   Text,
   Stack,
@@ -10,6 +9,7 @@ import {
   ScaleFade,
   Avatar,
 } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import {
   BiEnvelope,
@@ -116,10 +116,13 @@ function Header() {
                 fontSize={"18px"}
                 w="120px"
                 placeholder="English"
-              ></Select>
+              >
+                <option>English</option>
+                <option>Yorùbá</option>
+              </Select>
               <HStack>
                 {!isLoggedin ? (
-                  <Link _hover={{ textDecoration: "none" }} href="/login">
+                  <Link to="/login">
                     <Text color="white" fontSize={"18px"}>
                       Login
                     </Text>
@@ -135,11 +138,10 @@ function Header() {
                 <BiUser size={"24px"} color="white" />
               </HStack>
               <HStack cursor={"pointer"}>
-           
-                <Link href="/cart">
+                <Link to="/cart">
                   <BiCart size={"24px"} color="white" />
                 </Link>
-                <Link _hover={{ textDecoration: "none" }} href="/cart">
+                <Link to="/cart">
                   {!isEmpty && (
                     <Avatar
                       bg="red"
@@ -178,16 +180,14 @@ function Header() {
         spacing="40px"
         // mt={{base: "70px", md: "0px"}}
       >
-        <Select
-          color="white"
-          fontSize={"18px"}
-          w="120px"
-          placeholder="English"
-        ></Select>
+        <Select color="white" bg="#7E33E0" fontSize={"18px"} w="120px">
+          <option>English</option>
+          <option>Yorùbá</option>
+        </Select>
 
         <HStack>
           {!isLoggedin ? (
-            <Link _hover={{ textDecoration: "none" }} href="/login">
+            <Link to="/login">
               <Text color="white" fontSize={"18px"}>
                 Login
               </Text>
@@ -204,15 +204,15 @@ function Header() {
         </HStack>
 
         <HStack cursor={"pointer"}>
-          <Link _hover={{ textDecoration: "none" }} href="/cart">
+          <Link to="/cart">
             <Text color="white" fontSize={"18px"}>
               Cart
             </Text>
           </Link>
-          <Link _hover={{ textDecoration: "none" }} href="/cart">
+          <Link to="/cart">
             <BiCart size={"24px"} color="white" />
           </Link>
-          <Link _hover={{ textDecoration: "none" }} href="/cart">
+          <Link to="/cart">
             {!isEmpty && (
               <Avatar bg="red" size="sm" name={String(totalUniqueItems)} />
             )}

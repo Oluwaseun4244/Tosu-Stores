@@ -1,10 +1,12 @@
 import { Flex, Box, Image, Text, Button, Stack } from "@chakra-ui/react";
 import React, { useState, useEffect } from "react";
-import { BsStar, BsStarFill, BsStarHalf,BsHeartFill } from "react-icons/bs";
+import { BsStar, BsStarFill, BsStarHalf, BsHeartFill } from "react-icons/bs";
 import { FaCartPlus } from "react-icons/fa";
 import featured from "../Data/featured.json";
 import { useCart } from "react-use-cart";
 import notify from "../Functions/notify";
+import { useSelector, useDispatch } from "react-redux";
+import { changeFavor } from "../Actions";
 
 const data = {
   imageURL:
@@ -46,6 +48,8 @@ function Rating({ rating, numReviews }) {
 function Featured() {
   const { items, addItem } = useCart();
   const [watch, setWatch] = useState(false);
+  const featuredProducts = useSelector((state) => state.favorite);
+  const dispatch = useDispatch();
 
   const checkAndNotify = (product) => {
     const checkItem = (item) => {
@@ -63,12 +67,13 @@ function Featured() {
     }
   };
 
-  const changeFavorite = (product) => {
-    if (product.favorite === true) {
-      product.favorite = false;
-    } else {
-      product.favorite = true;
-    }
+  const changeFavorite = (product, index) => {
+    dispatch(changeFavor(product.favorite, index));
+    // if (product.favorite === true) {
+    //   product.favorite = false;
+    // } else {
+    //   product.favorite = true;
+    // }
     setWatch(!watch);
   };
 
@@ -80,7 +85,7 @@ function Featured() {
       justifyContent="center"
       spacing={"20px"}
     >
-      {featured.map((item, i) => (
+      {featuredProducts.map((item, i) => (
         <Box
           w={{ base: "95%", md: "300px" }}
           height={"460px"}
@@ -94,7 +99,7 @@ function Featured() {
             <Box size="10px" position="absolute" top={2} right={2}>
               <BsHeartFill
                 color={item.favorite ? "red" : "grey"}
-                onClick={() => changeFavorite(item)}
+                onClick={() => changeFavorite(item, i)}
                 cursor={"pointer"}
               />
             </Box>

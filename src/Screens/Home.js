@@ -12,7 +12,10 @@ import RubberBand from "react-reveal/RubberBand";
 import Fade from "react-reveal/Fade";
 import Featured from "../Components/Featured";
 
+
 function Home() {
+  
+
   return (
     <Box w="100%">
       <Header />
@@ -31,6 +34,7 @@ function Home() {
           </Text>
         </Fade>
       </Box>
+
       <HomeCarousels />
       <Box px={{ base: "20px", md: "50px" }}>
         <RubberBand>

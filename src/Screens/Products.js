@@ -30,7 +30,7 @@ function Products() {
   const [itemOffset, setItemOffset] = useState(0);
   const [productPerPage, setPerPage] = useState(4);
 
-
+//The function that handles product per page filter
   const perPage = (e) => {
     let value = e.target.value;
     value.length

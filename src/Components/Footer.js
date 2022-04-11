@@ -9,8 +9,16 @@ import {
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router";
 
+
 function Footer() {
+  let user = JSON.parse(localStorage.getItem("user"));
   const navigate = useNavigate();
+
+
+  const signOUt =()=>{
+    localStorage.clear()
+    navigate("/login")
+  }
   return (
     <Stack
       w="100%"
@@ -30,17 +38,30 @@ function Footer() {
         >
           Tosu Stores
         </Text>
-        <InputGroup>
+        {
+          !user ? (    <InputGroup>
+            <Input bg="white" placeholder="Enter Email Address" />
+            <InputRightAddon
+              rounded="8px"
+              color="white"
+              bg="#FB2E86"
+              cursor="pointer"
+              children="Sign Up"
+              onClick={() => navigate("/register")}
+            />
+          </InputGroup>) : (    <InputGroup>
           <Input bg="white" placeholder="Enter Email Address" />
           <InputRightAddon
             rounded="8px"
             color="white"
             bg="#FB2E86"
             cursor="pointer"
-            children="Sign Up"
-            onClick={() => navigate("/register")}
+            children="Sign Out"
+            onClick={signOUt}
           />
-        </InputGroup>
+        </InputGroup>)
+        }
+    
         <Text my="10px" fontWeight="400" color="#8A8FB9">
           Contact Info
         </Text>

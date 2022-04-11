@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import {
   Stack,
   Text,
-  Link,
   InputGroup,
   Input,
   InputRightElement,
   Spacer,
 } from "@chakra-ui/react";
 import { BiSearch } from "react-icons/bi";
+import { Link } from "react-router-dom";
 
 function HeaderLinks({ active = false }) {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -45,9 +45,8 @@ function HeaderLinks({ active = false }) {
         direction={{ base: "column", md: "row" }}
         spacing="25px"
       >
-        <Link _hover={{ color: "#FB2E86", textDecoration: "none" }} href="/">
+        <Link to="/">
           <Text
-            _hover={{ color: "#FB2E86", textDecoration: "none" }}
             fontWeight={"500"}
             color={active === "home" ? "#FB2E86" : "#0D0E43"}
           >
@@ -55,10 +54,7 @@ function HeaderLinks({ active = false }) {
           </Text>
         </Link>
 
-        <Link
-          _hover={{ color: "#FB2E86", textDecoration: "none" }}
-          href="/products"
-        >
+        <Link to="/products">
           <Text
             _hover={{ color: "#FB2E86" }}
             fontWeight={"500"}
@@ -70,7 +66,7 @@ function HeaderLinks({ active = false }) {
         {isLoggedIn && (
           <Link
             _hover={{ color: "#FB2E86", textDecoration: "none" }}
-            href="/contact"
+            to="/contact"
           >
             <Text
               _hover={{ color: "#FB2E86" }}
@@ -82,7 +78,7 @@ function HeaderLinks({ active = false }) {
           </Link>
         )}
 
-        <Link _hover={{ color: "#FB2E86", textDecoration: "none" }} href="#">
+        <Link to="#">
           <Text
             _hover={{ color: "#FB2E86" }}
             fontWeight={"500"}
