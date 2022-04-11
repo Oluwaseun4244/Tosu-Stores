@@ -1,7 +1,5 @@
 [
-    {
-        "category": "Clothings"
-    },
+
     {
         "category": "Wears"
     },
@@ -10,8 +8,13 @@
     },
     {
         "category": "Mobile Phones"
-    },
+    }
+    ,
     {
         "category": "Game Consoles"
+    }
+    ,
+    {
+        "category": "Others"
     }
 ]

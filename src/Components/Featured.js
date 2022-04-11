@@ -1,15 +1,10 @@
-import {
-  Flex,
-  Box,
-  Image,
-  useColorModeValue,
-  Text,
-  Button,
-  Stack,
-} from "@chakra-ui/react";
-import { BsStar, BsStarFill, BsStarHalf } from "react-icons/bs";
+import { Flex, Box, Image, Text, Button, Stack } from "@chakra-ui/react";
+import React, { useState, useEffect } from "react";
+import { BsStar, BsStarFill, BsStarHalf,BsHeartFill } from "react-icons/bs";
 import { FaCartPlus } from "react-icons/fa";
-import { FiHeart } from "react-icons/fi";
+import featured from "../Data/featured.json";
+import { useCart } from "react-use-cart";
+import notify from "../Functions/notify";
 
 const data = {
   imageURL:
@@ -48,7 +43,36 @@ function Rating({ rating, numReviews }) {
   );
 }
 
-function Prod() {
+function Featured() {
+  const { items, addItem } = useCart();
+  const [watch, setWatch] = useState(false);
+
+  const checkAndNotify = (product) => {
+    const checkItem = (item) => {
+      return item.id === product.id;
+    };
+
+    const inCart = items.findIndex(checkItem);
+
+    if (inCart > -1) {
+      notify("Product already in cart", "warn");
+    } else {
+      addItem(product);
+
+      notify("Product has been added to cart", "success");
+    }
+  };
+
+  const changeFavorite = (product) => {
+    if (product.favorite === true) {
+      product.favorite = false;
+    } else {
+      product.favorite = true;
+    }
+    setWatch(!watch);
+  };
+
+  useEffect(() => {}, [watch]);
   return (
     <Stack
       direction={["column", "row"]}
@@ -56,9 +80,9 @@ function Prod() {
       justifyContent="center"
       spacing={"20px"}
     >
-      {[1, 2, 3, 4].map((item, i) => (
+      {featured.map((item, i) => (
         <Box
-          w={{ base: "90%", md: "300px" }}
+          w={{ base: "95%", md: "300px" }}
           height={"460px"}
           borderWidth="1px"
           rounded="lg"
@@ -68,12 +92,16 @@ function Prod() {
         >
           <Box px="10px">
             <Box size="10px" position="absolute" top={2} right={2}>
-              <FiHeart cursor={"pointer"} />
+              <BsHeartFill
+                color={item.favorite ? "red" : "grey"}
+                onClick={() => changeFavorite(item)}
+                cursor={"pointer"}
+              />
             </Box>
 
             <Image
-              src={data.imageURL}
-              alt={`Picture of ${data.name}`}
+              src={item.image}
+              alt={`Picture of ${item.name}`}
               roundedTop="lg"
               width={"100%"}
               height={"300px"}
@@ -89,7 +117,7 @@ function Prod() {
                 lineHeight="tight"
                 isTruncated
               >
-                {data.name}
+                {item.name}
               </Box>
             </Flex>
 
@@ -106,13 +134,14 @@ function Prod() {
                 //   color={useColorModeValue("gray.800", "white")}
               >
                 <Box as="span">₦</Box>
-                {data.price.toFixed(2)}
+                {new Intl.NumberFormat().format(item.price)}
               </Box>
               <Button
                 color={"white"}
                 size={"md"}
                 background={"#F5862E"}
                 border={"1px solid white"}
+                onClick={() => checkAndNotify(item)}
               >
                 <FaCartPlus /> &nbsp; Add to Cart
               </Button>
@@ -124,4 +153,4 @@ function Prod() {
   );
 }
 
-export default Prod;
+export default Featured;

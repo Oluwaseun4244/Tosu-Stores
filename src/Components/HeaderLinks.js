@@ -34,7 +34,7 @@ function HeaderLinks({ active = false }) {
     >
       <Text
         fontFamily="Roboto"
-        color="#0D0E43"
+        color="#1A0B5B"
         fontSize={"30px"}
         fontWeight="900"
       >

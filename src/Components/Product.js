@@ -10,14 +10,12 @@ function Product({ product, func }) {
   const [watch, setWatch] = useState(false);
 
   const checkAndNotify = (product) => {
-    //the (item) is a parameter waiting to be provided by function caller
     const checkItem = (item) => {
       return item.id === product.id;
     };
 
     const inCart = items.findIndex(checkItem);
-    //findIndex maps over the items in cart, call checkItem() and provides each item as argument for checkItem
-    //if result condition isn't met, result is -1 and hence below
+
     if (inCart > -1) {
       notify("Product already in cart", "warn");
     } else {
@@ -65,11 +63,11 @@ function Product({ product, func }) {
           {product.name}
         </Text>
         <HStack>
-          <Text color="#111C85">
-            ${new Intl.NumberFormat().format(product.price)}.00
+          <Text fontWeight={500} fontSize="xl" color="#111C85">
+          ₦{new Intl.NumberFormat().format(product.price)}.00
           </Text>
-          <Text textDecoration={"line-through"} color="#FF2AAA">
-            ${new Intl.NumberFormat().format(product.old_price)}.00
+          <Text fontWeight={500} fontSize="xl" textDecoration={"line-through"} color="#FF2AAA">
+          ₦{new Intl.NumberFormat().format(product.old_price)}.00
           </Text>
         </HStack>
         <Text color="#9295AA" fontWeight="400">

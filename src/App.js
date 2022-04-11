@@ -11,7 +11,7 @@ import Register from "./Screens/Register";
 import "react-toastify/dist/ReactToastify.css";
 import { CartProvider } from "react-use-cart";
 import Home from "./Screens/Home";
-import Prod from "./Components/Prod";
+import Prod from "./Components/Featured";
 
 function App() {
   return (

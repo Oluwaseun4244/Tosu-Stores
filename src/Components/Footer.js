@@ -4,13 +4,13 @@ import {
   Stack,
   Text,
   Input,
-
   InputGroup,
-
   InputRightAddon,
 } from "@chakra-ui/react";
+import { useNavigate } from "react-router";
 
 function Footer() {
+  const navigate = useNavigate();
   return (
     <Stack
       w="100%"
@@ -18,7 +18,7 @@ function Footer() {
       px={{ base: "20px", md: "50px" }}
       bg="#EEEFFB"
       py="30px"
-      spacing={{base: "40px", md:"80px"}}
+      spacing={{ base: "40px", md: "80px" }}
       mt="50px"
     >
       <Box>
@@ -26,7 +26,7 @@ function Footer() {
           fontSize="35px"
           fontFamily="Roboto"
           fontWeight="bold"
-          color="#000000"
+          color="#1A0B5B"
         >
           Tosu Stores
         </Text>
@@ -38,6 +38,7 @@ function Footer() {
             bg="#FB2E86"
             cursor="pointer"
             children="Sign Up"
+            onClick={() => navigate("/register")}
           />
         </InputGroup>
         <Text my="10px" fontWeight="400" color="#8A8FB9">
