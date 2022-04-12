@@ -144,7 +144,7 @@ function CartTotalCard() {
           </Text>
           <Spacer />
           <Text fontWeight="600" color="#1D3178">
-            N{new Intl.NumberFormat().format(cartTotal)}
+          ₦{new Intl.NumberFormat().format(cartTotal)}
           </Text>
         </HStack>
 
@@ -156,7 +156,7 @@ function CartTotalCard() {
           </Text>
           <Spacer />
           <Text fontWeight="600" color="#1D3178">
-            N{new Intl.NumberFormat().format(cartTotal + cartTotal * 0.0075)}
+          ₦{new Intl.NumberFormat().format(cartTotal + cartTotal * 0.0075)}
           </Text>
         </HStack>
 

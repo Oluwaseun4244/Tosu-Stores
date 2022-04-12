@@ -109,7 +109,6 @@ function Header() {
         placement="left"
         onClose={onClose}
         finalFocusRef={btnRef}
-        display="none"
       >
         <DrawerOverlay />
         <DrawerContent>
@@ -146,7 +145,8 @@ function Header() {
               >
                 <Select
                   color="white"
-                  fontWeight="bold" fontSize="20px"
+                  fontWeight="bold"
+                  fontSize="20px"
                   w="120px"
                   placeholder="English"
                 >
@@ -187,8 +187,6 @@ function Header() {
               </Stack>
             </Box>
           </DrawerBody>
-
-          
         </DrawerContent>
       </Drawer>
 

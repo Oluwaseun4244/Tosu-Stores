@@ -103,7 +103,7 @@ function ShoppingCart() {
                     <Td>
                       <Text color="#15245E">
                         {" "}
-                        ${new Intl.NumberFormat().format(item.price)}.00
+                        ₦{new Intl.NumberFormat().format(item.price)}.00
                       </Text>
                     </Td>
                     <Td>
@@ -125,7 +125,7 @@ function ShoppingCart() {
                     </Td>
                     <Td>
                       <Text color="#15245E">
-                        $
+                      ₦
                         {new Intl.NumberFormat().format(
                           item.price * item.quantity
                         )}
