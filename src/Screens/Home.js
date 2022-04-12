@@ -1,9 +1,15 @@
-import { Box, Center, Heading, Image, Link, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Center,
+  Heading,
+  Image,
+  Text,
+  DrawerFooter,
+} from "@chakra-ui/react";
 import React from "react";
 import Footer from "../Components/Footer";
 import Header from "../Components/Header";
 import HeaderLinks from "../Components/HeaderLinks";
-import { FaSmileWink } from "react-icons/fa";
 import PageTitleBar from "../Components/PageTitleBar";
 import HomeCarousels from "../Components/HomeCarousels";
 import LatestProducts from "../Components/LatestProducts";
@@ -12,10 +18,7 @@ import RubberBand from "react-reveal/RubberBand";
 import Fade from "react-reveal/Fade";
 import Featured from "../Components/Featured";
 
-
 function Home() {
-  
-
   return (
     <Box w="100%">
       <Header />

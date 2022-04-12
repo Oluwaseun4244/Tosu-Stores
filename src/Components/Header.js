@@ -8,6 +8,13 @@ import {
   useDisclosure,
   ScaleFade,
   Avatar,
+  Drawer,
+  DrawerOverlay,
+  Button,
+  DrawerContent,
+  DrawerBody,
+  DrawerCloseButton,
+  DrawerFooter,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
@@ -23,10 +30,12 @@ import { useNavigate } from "react-router";
 import { useCart } from "react-use-cart";
 
 function Header() {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const btnRef = React.useRef();
   const navigate = useNavigate();
   const [isLoggedin, setLoggedIn] = useState(false);
   const [userMail, setUserMail] = useState("");
-  const { isOpen, onToggle } = useDisclosure();
+  // const { isOpen, onToggle } = useDisclosure();
 
   const { items, totalUniqueItems, isEmpty } = useCart();
   const checkIfLogged = () => {
@@ -61,6 +70,24 @@ function Header() {
     >
       {!isOpen ? (
         <Box
+          onClick={onOpen}
+          ref={btnRef}
+          cursor={"pointer"}
+          display={{ base: "flex", md: "none" }}
+        >
+          <BiMenu size={"35px"} color="white" />
+        </Box>
+      ) : (
+        <Box
+          onClick={onOpen}
+          cursor={"pointer"}
+          display={{ base: "flex", md: "none" }}
+        >
+          <HiMenuAlt1 size={"35px"} color="white" />
+        </Box>
+      )}
+      {/* {!isOpen ? (
+        <Box
           onClick={onToggle}
           cursor={"pointer"}
           display={{ base: "flex", md: "none" }}
@@ -75,9 +102,97 @@ function Header() {
         >
           <HiMenuAlt1 size={"35px"} color="white" />
         </Box>
-      )}
+      )} */}
 
-      {isOpen && (
+      <Drawer
+        isOpen={isOpen}
+        placement="left"
+        onClose={onClose}
+        finalFocusRef={btnRef}
+        display="none"
+      >
+        <DrawerOverlay />
+        <DrawerContent>
+          <DrawerCloseButton size={"lg"}>
+            <HiMenuAlt1 color="white" onClick={onClose} size={"40px"} />
+          </DrawerCloseButton>
+
+          <DrawerBody bg="#7E33E0">
+            <Box>
+              <Stack
+                ml={{ base: "0px", md: "30%" }}
+                direction={["column"]}
+                spacing="25px"
+                pt="25px"
+              >
+                <HStack mt="30px">
+                  <BiEnvelope size={"24px"} color="white" />
+                  <Text color="white" fontWeight="bold" fontSize="20px">
+                    {userMail || "example@gmail.com"}
+                  </Text>
+                </HStack>
+                <HStack ml={{ base: "0px", md: "60px" }}>
+                  <BiPhoneCall size={"24px"} color="white" />
+                  <Text color="white" fontWeight="bold" fontSize="20px">
+                    080300xxxxxxx
+                  </Text>
+                </HStack>
+              </Stack>
+              <Stack
+                ml={{ base: "0px", md: "30%" }}
+                direction={["column"]}
+                spacing="25px"
+                pt="25px"
+              >
+                <Select
+                  color="white"
+                  fontWeight="bold" fontSize="20px"
+                  w="120px"
+                  placeholder="English"
+                >
+                  <option>English</option>
+                  <option>Yorùbá</option>
+                </Select>
+                <HStack>
+                  {!isLoggedin ? (
+                    <Link to="/login">
+                      <Text color="white" fontWeight="bold" fontSize="20px">
+                        Login
+                      </Text>
+                    </Link>
+                  ) : (
+                    <Box cursor="pointer" onClick={logout}>
+                      <Text color="white" fontWeight="bold" fontSize="20px">
+                        Logout
+                      </Text>
+                    </Box>
+                  )}
+
+                  <BiUser size={"24px"} color="white" />
+                </HStack>
+                <HStack cursor={"pointer"}>
+                  <Link to="/cart">
+                    <BiCart size={"30px"} color="white" />
+                  </Link>
+                  <Link to="/cart">
+                    {!isEmpty && (
+                      <Avatar
+                        bg="red"
+                        size="sm"
+                        name={String(totalUniqueItems)}
+                      />
+                    )}
+                  </Link>
+                </HStack>
+              </Stack>
+            </Box>
+          </DrawerBody>
+
+          
+        </DrawerContent>
+      </Drawer>
+
+      {/* {isOpen && (
         <ScaleFade
           display={{ base: "block", md: "none" }}
           bg="#7E33E0"
@@ -154,7 +269,7 @@ function Header() {
             </Stack>
           </Box>
         </ScaleFade>
-      )}
+      )} */}
       <HStack display={{ base: "none", md: "flex" }}>
         <BiEnvelope size={"24px"} color="white" />
         <Text color="white" fontSize={"18px"}>
