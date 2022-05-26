@@ -11,7 +11,7 @@ import Register from "./Screens/Register";
 import "react-toastify/dist/ReactToastify.css";
 import { CartProvider } from "react-use-cart";
 import Home from "./Screens/Home";
-import Prod from "./Components/Featured";
+// import Prod from "./Components/Featured";
 
 function App() {
   return (
@@ -28,7 +28,7 @@ function App() {
             <Route path="/completed" element={<OrderCompleted />} />
             <Route path="/error" element={<Error />} />
             <Route path="/contact" element={<ContactInfo />} />
-            <Route path="/p" element={<Prod />} />
+            {/* <Route path="/p" element={<Prod />} /> */}
           </Routes>
         </BrowserRouter>
       </ChakraProvider>

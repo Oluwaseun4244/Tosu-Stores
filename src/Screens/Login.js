@@ -1,27 +1,21 @@
-import {
-  Box,
-  Input,
-  Text,
-  Link,
-  Button,
-  Center,
-} from "@chakra-ui/react";
+import { Box, Input, Text, Button, Center } from "@chakra-ui/react";
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
 import Footer from "../Components/Footer";
 import Header from "../Components/Header";
 import HeaderLinks from "../Components/HeaderLinks";
 import PageTitleBar from "../Components/PageTitleBar";
+import { Link } from "react-router-dom";
 
 function Login() {
-  const navigate = useNavigate();
   const [errorMsg, setErrorMsg] = useState("");
   const [regMsg, setRegMsg] = useState("");
   const [details, setDetails] = useState({
     email: "",
     password: "",
   });
-
+  
+  const navigate = useNavigate();
   const handleChange = (e) => {
     setDetails({ ...details, [e.target.id]: e.target.value });
   };
@@ -48,7 +42,7 @@ function Login() {
     let intendedRoute = localStorage.getItem("route");
 
     // fetch("http://127.0.0.1:8000/api/login", requestOptions)
-      fetch("https://tola-ecommerce.herokuapp.com/api/login", requestOptions)
+    fetch("https://tola-ecommerce.herokuapp.com/api/login", requestOptions)
       .then((response) => response.json())
       .then((result) => {
         console.log("result", result);
@@ -73,7 +67,9 @@ function Login() {
 
   useEffect(() => {
     let newreg = localStorage.getItem("newlyReg");
-    setRegMsg(newreg);
+    if (newreg) {
+      setRegMsg(newreg);
+    }
 
     localStorage.removeItem("newlyReg");
   }, []);
@@ -130,7 +126,7 @@ function Login() {
             my="20px"
             placeholder="Password"
           />
-          <Link fontWeight="400" mt="15px" color="#9096B2">
+          <Link to="#" fontWeight="400" mt="15px" color="#9096B2">
             Forgot your password?
           </Link>
           <Button
@@ -148,10 +144,8 @@ function Login() {
           {/* </form> */}
           <Center mb="20px">
             <Link
-              href="/register"
-              textAlign="center"
-              fontWeight="400"
-              color="#9096B2"
+              to="/register"
+             
             >
               Don’t have an Account? Create account
             </Link>

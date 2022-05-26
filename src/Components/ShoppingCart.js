@@ -12,7 +12,6 @@ import {
   SimpleGrid,
   Spacer,
   Button,
-  Link,
   Center,
 } from "@chakra-ui/react";
 import React from "react";
@@ -25,8 +24,10 @@ import { FiMinusSquare, FiPlusSquare } from "react-icons/fi";
 import { useCart } from "react-use-cart";
 import notify from "../Functions/notify";
 import CartTotalCard from "./CartTotalCard";
+import { useNavigate } from "react-router";
 
 function ShoppingCart() {
+  const navigate = useNavigate();
   const { items, removeItem, emptyCart, updateItemQuantity, isEmpty } =
     useCart();
 
@@ -39,6 +40,10 @@ function ShoppingCart() {
     emptyCart();
     notify("Cart Cleared!", "error");
   };
+
+  const goProducts =()=>{
+    navigate("/products")
+  }
   return (
     <>
       <Header />
@@ -154,8 +159,7 @@ function ShoppingCart() {
           {!isEmpty && (
             <Stack mt="30px" direction={[ "row"]}>
               <Button
-                as={Link}
-                href="/products"
+                onClick={goProducts}
                 _hover={{ bg: "green",color: "white", textDecoration: "none" }}
                 bg="#FB2E86"
                 color="white"

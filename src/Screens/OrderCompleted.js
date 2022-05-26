@@ -1,5 +1,6 @@
-import { Text, Box, Stack, Button, Link } from "@chakra-ui/react";
+import { Text, Box, Stack, Button } from "@chakra-ui/react";
 import React from "react";
+import { useNavigate } from "react-router";
 import Header from "../Components/Header";
 import HeaderLinks from "../Components/HeaderLinks";
 import PageTitleBar from "../Components/PageTitleBar";
@@ -7,6 +8,11 @@ import { HiBadgeCheck } from "react-icons/hi";
 import Footer from "../Components/Footer";
 
 function OrderCompleted() {
+  const navigate = useNavigate();
+
+  const goToProduct = () =>{
+    navigate("/products")
+  }
   return (
     <>
       <Header />
@@ -43,8 +49,8 @@ function OrderCompleted() {
 
         <Button
           _hover={{ bg: "#FF1788", textDecoration: "none", color: "white" }}
-          as={Link}
-          href="/products"
+         
+         onClick={goToProduct}
           color="white"
           bg="#FF1788"
         >

@@ -2,13 +2,18 @@ import { Box, Stack, Image, Text, HStack, Link } from "@chakra-ui/react";
 import React, { useState, useEffect } from "react";
 import { BiCart } from "react-icons/bi";
 import { BsHeartFill } from "react-icons/bs";
+import { useNavigate } from "react-router";
 import { useCart } from "react-use-cart";
 import notify from "../Functions/notify";
 
 function Product({ product, func }) {
   const { items, addItem } = useCart();
   const [watch, setWatch] = useState(false);
+  const navigate = useNavigate();
 
+  const fetchSingleProduct=(id)=>{
+    navigate(`/products/${id}`)
+  }
   const checkAndNotify = (product) => {
     const checkItem = (item) => {
       return item.id === product.id;
@@ -51,7 +56,8 @@ function Product({ product, func }) {
       <Box
         as={Link}
         _hover={{ textDecoration: "none" }}
-        href={`/products/${product.id}`}
+        onClick={()=>fetchSingleProduct(product.id)}
+        // href={`/products/${product.id}`}
         w="250px"
         objectFit={"cover"}
       >

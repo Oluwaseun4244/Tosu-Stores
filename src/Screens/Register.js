@@ -1,10 +1,11 @@
-import { Box, Input, Text, Link, Button, Center } from "@chakra-ui/react";
+import { Box, Input, Text, Button, Center } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import Footer from "../Components/Footer";
 import Header from "../Components/Header";
 import HeaderLinks from "../Components/HeaderLinks";
 import PageTitleBar from "../Components/PageTitleBar";
+import { Link } from "react-router-dom";
 
 function Register() {
   const navigate = useNavigate();
@@ -175,10 +176,10 @@ function Register() {
           </Button>
           <Center mb="20px">
             <Link
-              href="/login"
-              textAlign="center"
-              fontWeight="400"
-              color="#9096B2"
+              to="/login"
+              // textAlign="center"
+              // fontWeight="400"
+              // color="#9096B2"
             >
               Already have an Account? Login
             </Link>
