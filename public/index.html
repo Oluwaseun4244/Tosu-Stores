@@ -45,16 +45,36 @@
     />
 
     <link
-    rel="stylesheet"
-    type="text/css"
-    charSet="UTF-8"
-    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
-  />
-  <link
-    rel="stylesheet"
-    type="text/css"
-    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
-  />
+      rel="stylesheet"
+      type="text/css"
+      charset="UTF-8"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
+    />
+
+    <script src="https://analytics.itskillscenter.com/js/tribearc.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        autoInit(
+          "owkqwau2gzgrfql2qq9no",
+          "https://analytics.itskillscenter.com/api/analytics",
+          true
+        );
+      });
+
+      let weTrack = new TribeHound("34378489934hdjfffjjkfs");
+      const track = () => {
+        weTrack.houndEvent("Purchase Button", {
+          label: "Purchase Button",
+          event: {},
+        });
+      };
+    </script>
     <title>Tosu Stores</title>
   </head>
   <body>

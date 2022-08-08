@@ -52,7 +52,7 @@ function Login() {
           if (intendedRoute) {
             navigate(intendedRoute);
           } else {
-            navigate("/products");
+            navigate("/");
           }
         } else if (result.error === "Unauthorized") {
           setErrorMsg("Username or password incorrect");
